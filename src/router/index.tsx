@@ -3,24 +3,31 @@ import { Navigate } from 'react-router-dom'
 import React, { lazy } from 'react'
 import Home from '@/views/Home'
 const About = lazy(() => import("@/views/About"))
+const Page1 = lazy(() => import("@/views/Page1"))
 
 const withLodingComponent = (comp: JSX.Element) => (
-    <React.Suspense fallback={<div>Loding...</div>}>
-        {comp}
-    </React.Suspense>
+  <React.Suspense fallback={<div>Loding...</div>}>
+    {comp}
+  </React.Suspense>
 )
 const routes = [
-    {
-        path: "/",
-        element: <Navigate to="/home" />
-    },
-    {
-        path: "/home",
-        element: <Home />
-    },
-    {
+  {
+    path: "/",
+    element: <Navigate to="/page1" />
+  },
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
         path: "/about",
-        element: withLodingComponent(<About />)
-    },
+        element: withLodingComponent(<Page1 />)
+      },
+    ]
+  },
+  // {
+  //     path: "/about",
+  //     element: withLodingComponent(<About />)
+  // },
 ]
 export default routes

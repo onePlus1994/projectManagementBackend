@@ -20,14 +20,14 @@ const routes = [
     element: <Home />,
     children: [
       {
-        path: "/about",
+        path: "/page1",
         element: withLodingComponent(<Page1 />)
       },
     ]
   },
-  // {
-  //     path: "/about",
-  //     element: withLodingComponent(<About />)
-  // },
+  {
+    path: "*",
+    element: <Navigate to="/page1" />
+  },
 ]
 export default routes

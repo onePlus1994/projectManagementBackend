@@ -15,12 +15,12 @@ type MenuItem = Required<MenuProps>['items'][number];
 const items: MenuItem[] = [
   {
     label: 'Option 1',
-    key: '/page1',
+    key: '/about',
     icon: <PieChartOutlined />,
   },
   {
     label: 'Option 2',
-    key: '/page2',
+    key: '/page1',
     icon: <DesktopOutlined />,
   },
   {

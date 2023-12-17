@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
 //引入UI样式
 import 'antd/dist/reset.css'
